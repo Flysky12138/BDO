@@ -1,0 +1,1 @@
+pyinstaller -F -i ./BlackDesert.ico ./บฺษณบบปฏ.py
