@@ -1,1 +1,1 @@
-pyinstaller -F -i ./BlackDesert.ico ./ºÚÉ³ºº»¯.py
+pyinstaller -F -i ./BlackDesert.ico ./é»‘æ²™æ±‰åŒ–.py
