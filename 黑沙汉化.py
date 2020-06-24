@@ -38,9 +38,10 @@ class Downloader():
                 return
             else:
                 # 备份
-                if os.path.exists(dir + "\\ads\\languagedata_en.loc.bak"):
-                    os.remove(dir + "\\ads\\languagedata_en.loc.bak")
-                os.rename(self.name, dir + "\\ads\\languagedata_en.loc.bak")
+                bakfilepath = dir + "\\ads\\languagedata_en.loc.bak"
+                if os.path.exists(bakfilepath):
+                    os.remove(bakfilepath)
+                os.rename(self.name, bakfilepath)
         print('开始下载  [ Size: %s M ] [ %s ]' %
               (format(self.size/1024000, '.2f'), self.url))
         time_start = time.time()
