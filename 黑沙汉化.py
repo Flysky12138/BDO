@@ -38,7 +38,7 @@ class Downloader():
                 return
             else:
                 # 备份
-                bakfilepath = dir + "\\ads\\languagedata_en.loc.bak"
+                bakfilepath = dir + "\\languagedata_en.loc.bak"
                 if os.path.exists(bakfilepath):
                     os.remove(bakfilepath)
                 os.rename(self.name, bakfilepath)
@@ -72,6 +72,7 @@ class Downloader():
 dir = os.getcwd()
 # 下载loc文件
 Downloader('http://dn.blackdesert.com.tw/UploadData/ads/languagedata_tw.loc',
-           16, dir + "\\ads\\languagedata_en.loc").run()
+           16, dir + "\\languagedata_en.loc").run()
 # 启动黑沙
-os.system("\"\"" + dir + "\\Black Desert Online Steam Launcher.exe\"\"")
+os.system("\"\"" + os.path.dirname(dir) +
+          "\\Black Desert Online Steam Launcher.exe\"\"")
