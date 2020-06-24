@@ -32,35 +32,38 @@ class Downloader():
             lock.release()
 
     def run(self):
-        if os.path.getsize(self.name) != self.size:
-            # 备份
-            os.remove(dir + "/ads/languagedata_en.loc.bak")
-            os.rename(self.name, dir + "/ads/languagedata_en.loc.bak")
-            print('开始下载  [ Size: %s M ] [ %s ]' %
-                  (format(self.size/1024000, '.2f'), self.url))
-            time_start = time.time()
-            # 创建一个和要下载文件一样大小的文件
-            fp = open(self.name, "wb")
-            fp.truncate(self.size)
-            fp.close()
-            # 启动多线程写文件
-            part = self.size // self.num
-            pool = ThreadPoolExecutor(max_workers=self.num)
-            futures = []
-            for i in range(self.num):
-                start = part * i
-                # 最后一块
-                if i == self.num - 1:
-                    end = self.size - 1
-                else:
-                    end = start + part - 1
-                futures.append(pool.submit(self.down, start, end))
-            wait(futures)
-            time_end = time.time()
-            print('下载完成  [ Time: %s S ]  [ %s ]' %
-                  (format(time_end-time_start, '.2f'), self.name))
-        else:
-            print('本地文件和远端文件一样，无需再次下载！')
+        if os.path.exists(self.name):
+            if os.path.getsize(self.name) == self.size:
+                print('本地文件和远端文件一样，无需再次下载！')
+                return
+            else:
+                # 备份
+                if os.path.exists(dir + "\\ads\\languagedata_en.loc.bak"):
+                    os.remove(dir + "\\ads\\languagedata_en.loc.bak")
+                os.rename(self.name, dir + "\\ads\\languagedata_en.loc.bak")
+        print('开始下载  [ Size: %s M ] [ %s ]' %
+              (format(self.size/1024000, '.2f'), self.url))
+        time_start = time.time()
+        # 创建一个和要下载文件一样大小的文件
+        fp = open(self.name, "wb")
+        fp.truncate(self.size)
+        fp.close()
+        # 启动多线程写文件
+        part = self.size // self.num
+        pool = ThreadPoolExecutor(max_workers=self.num)
+        futures = []
+        for i in range(self.num):
+            start = part * i
+            # 最后一块
+            if i == self.num - 1:
+                end = self.size - 1
+            else:
+                end = start + part - 1
+            futures.append(pool.submit(self.down, start, end))
+        wait(futures)
+        time_end = time.time()
+        print('下载完成  [ Time: %s S ]  [ %s ]' %
+              (format(time_end-time_start, '.2f'), self.name))
         time.sleep(3)
 
 
@@ -68,6 +71,6 @@ class Downloader():
 dir = os.getcwd()
 # 下载loc文件
 Downloader('http://dn.blackdesert.com.tw/UploadData/ads/languagedata_tw.loc',
-           16, dir + "/ads/languagedata_en.loc").run()
+           16, dir + "\\ads\\languagedata_en.loc").run()
 # 启动黑沙
-os.system("\"\"" + dir + "/Black Desert Online Steam Launcher.exe\"\"")
+os.system("\"\"" + dir + "\\Black Desert Online Steam Launcher.exe\"\"")
