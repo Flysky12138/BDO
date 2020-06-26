@@ -4,6 +4,7 @@ from requests import get, head
 import os
 import sys
 import time
+import ctypes
 lock = Lock()
 
 
@@ -69,7 +70,8 @@ class Downloader():
               (format(time_end-time_start, '.2f'), self.name))
         time.sleep(3)
 
-
+# 窗口标题
+ctypes.windll.kernel32.SetConsoleTitleW("Made by Flysky")
 # 黑沙地址
 dir = os.getcwd()
 # 下载loc文件
