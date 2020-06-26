@@ -36,6 +36,7 @@ class Downloader():
         if os.path.exists(self.name):
             if os.path.getsize(self.name) == self.size:
                 print('本地文件和远端文件一样，无需再次下载！')
+                time.sleep(3)
                 return
             else:
                 # 备份
