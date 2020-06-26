@@ -1,4 +1,5 @@
 ## Made by IDMGI's Flysky
+## If you meet TT_TT guild, please kill him, a bitch guild
 <br>
 
 ## 使用
