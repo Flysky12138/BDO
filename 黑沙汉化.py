@@ -2,6 +2,7 @@ from concurrent.futures import ThreadPoolExecutor, wait
 from threading import Lock
 from requests import get, head
 import os
+import sys
 import time
 lock = Lock()
 
@@ -74,5 +75,7 @@ dir = os.getcwd()
 Downloader('http://dn.blackdesert.com.tw/UploadData/ads/languagedata_tw.loc',
            16, dir + "\\languagedata_en.loc").run()
 # 启动黑沙
-os.system("\"\"" + os.path.dirname(dir) +
-          "\\Black Desert Online Steam Launcher.exe\"\"")
+gamepath = "\"" + os.path.dirname(dir) + \
+    "\\Black Desert Online Steam Launcher.exe\""
+if sys.argv[len(sys.argv) - 1] == "-s":
+    os.system(gamepath)
