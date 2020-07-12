@@ -20,4 +20,6 @@ pip install pyinstaller
 ```
 
 2、打包：
-运行 `打包.bat` 
+```
+pyinstaller -F -i ./BlackDesert.ico ./main.py
+``` 
