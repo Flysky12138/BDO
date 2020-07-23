@@ -69,7 +69,7 @@ class Downloader():
         time_end = time.time()
         print('下载完成  [ Time: %s S ]  [ %s ]' %
               (format(time_end-time_start, '.2f'), self.name))
-        time.sleep(10)
+        time.sleep(3)
 
 
 # 窗口标题
