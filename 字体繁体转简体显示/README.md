@@ -1,0 +1,1 @@
+### [https://github.com/nowar-fonts/Pseudo-SC](https://github.com/nowar-fonts/Pseudo-SC)
