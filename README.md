@@ -1,4 +1,4 @@
-## Made by IDMGI's Flysky
+## Made by Flysky NA
 <br>
 
 ## 使用
@@ -7,6 +7,8 @@
 
 使用: 将exe文件放在游戏里的 ads 目录下(如: `D:\steam\steamapps\common\Black Desert Online\ads` ), 并在每次更新后执行即可
 
+<br>
+<br>
 <br>
 
 ## 自行编译
