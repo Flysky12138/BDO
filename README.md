@@ -1,6 +1,6 @@
 ## Made by Flysky NA
 
-###由于http://dn.blackdesert.com.tw/UploadData/ads/languagedata_tw.loc获取到的语言文件版本过低，所以汉化不全。建议从台服客户端从提取语言文件。
+###由于 `http://dn.blackdesert.com.tw/UploadData/ads/languagedata_tw.loc` 获取到的语言文件版本过低，所以汉化不全。建议从台服客户端从提取语言文件。
 <br>
 
 ## 使用
