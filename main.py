@@ -79,7 +79,7 @@ dir = os.getcwd()
 # 仓库
 print('https://github.com/Flysky12138/BDO\n')
 # 下载loc文件
-Downloader('http://dn.blackdesert.com.tw/UploadData/ads/languagedata_tw.loc',
+Downloader('https://ghproxy.com/https://raw.githubusercontent.com/BDO-CnHope/bdocn/master/ads/languagedata_en.loc',
            16, dir + "\\languagedata_en.loc").run()
 # 启动黑沙
 gamepath = "\"" + os.path.dirname(dir) + \
